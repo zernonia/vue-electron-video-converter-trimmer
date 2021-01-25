@@ -1,20 +1,33 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/">Converter</router-link> |
+      <router-link to="/trimmer">Trimmer</router-link>
     </div>
     <router-view/>
   </div>
 </template>
 
 <style>
-#app {
+* {
   font-family: Avenir, Helvetica, Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+}
+body {
+  background: aqua;
+}
+
+#app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  display: grid;
+  justify-content: center;
+  height: 100vh;
+  align-content: baseline;
+  background: aqua;
 }
 
 #nav {
@@ -27,6 +40,6 @@
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: #409EFF;
 }
 </style>
