@@ -1,10 +1,13 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Converter</router-link> |
+      <router-link to="/">Compress</router-link> |
+      <router-link to="/converter">Converter</router-link> |
       <router-link to="/trimmer">Trimmer</router-link>
     </div>
-    <router-view/>
+    <keep-alive>
+      <router-view></router-view>
+    </keep-alive>
   </div>
 </template>
 

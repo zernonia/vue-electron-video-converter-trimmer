@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1>Compressor</h1>
+    <h1>h.265 to h.264 Converter</h1>
     <el-form ref="form" label-width="120px" style="width: 700px; display: block;">
       <el-form-item label="Input File">
         <div style="display: flex;">
@@ -54,7 +54,7 @@ export default {
     extension: '',
     output: 'C:\\Coding\\',
     progress: 0,
-    extensionList: ['.mp4', '.avi'],
+    extensionList: ['.mov', '.mp4', '.avi'],
     converting: false,
     duration: 0,
     alert: {
@@ -88,6 +88,9 @@ export default {
           progress.percent > 0 ? this.progress = Math.round(progress.percent * 100) / 100 : ''
         })
         .input(this.filepath)
+        .audioCodec('copy')
+        .videoCodec('libx264')
+        .outputOption('-pix_fmt yuv420p')
         .on('error', (err) => {
           this.converting = false
           this.alert = {
